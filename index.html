@@ -12,53 +12,89 @@
 
 <body>
     <div class="container">
-        <div class="row mb-5">
-            <div class="col-12 bg-body-secondary rounded-bottom-4">
-                <h1 class="p-3">Calcola il prezzo del tuo biglietto</h1>
+        <nav class="row navbar text-bg-primary rounded-bottom-4">
+            <div class="col-9 container-fluid">
+                <span class="fs-2">Calcola il prezzo del tuo biglietto</span>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-8 pe-0 pe-md-5">
-                <form>
-                    <div class="container nomargin">
-                        <div class="row">
-                            <div class="col-12 col-md-6 mb-4">
-                                <label for="age" class="form-label">Età del passeggero</label>
-                                <input type="numbrt" class="form-control" id="age" min="0" max="120" required>
-                            </div>
-                            <div class="col-12 col-md-6 mb-4">
-                                <label for="km" class="form-label">Distanza in kilometri</label>
-                                <input type="number" class="form-control" id="km" required>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Controlla il prezzo</button>
-                            </div>
-                        </div>
-                    </div>                    
-                </form>
+            <div class="col-3 text-end">
+                <img src="img/pngtree-train-silhouette-vector-png-image_6530575.png" alt="Logo" width="60" height="48" class="d-inline-block align-text-center">
             </div>
-            <div class="col-12 col-md-4 mt-5 mt-md-0">
-                <div class="card">
-                    <div class="card-header">
-                        Prezzo del biglietto
+        </nav>
+        <div class="row mt-5">
+            <form>
+                <div class="container nomargin">
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-4">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" required>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4">
+                            <label for="cognome" class="form-label">Cognome</label>
+                            <input type="text" class="form-control" id="cognome" required>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4">
+                            <label for="eta" class="form-label">Fascia d'età</label>
+                            <select id="eta" class="form-select" aria-label="Default select example" required>
+                                <option selected>Seleziona la tua fascia d'età</option>
+                                <option value="1">Minore di 18 anni</option>
+                                <option value="2">Tra i 18 e i 65 anni</option>
+                                <option value="3">Maggiore di 65 anni</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4">
+                            <label for="km" class="form-label">Distanza in kilometri</label>
+                            <input type="number" class="form-control" id="km" required>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <div>
-                            L'età inserita è:
-                            <p id="finalAge" class="fw-bold">-</p>
-                        </div>
-                        <div>
-                            La distanza inserita è:
-                            <p id="finalKm" class="fw-bold">-</p>
-                        </div>
-                        <div>
-                            Il prezzo totale del biglietto è:
-                            <p id="price" class="fw-bold">-</p>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary" id="primary">Controlla il prezzo</button>
                         </div>
                     </div>
                 </div>
+            </form>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header text-bg-primary">
+                        Il tuo biglietto
+                    </div>
+                    <div class="card-body container">
+                        <div class="row">
+                            <div class="col-12 col-md-4 col-lg-2">
+                                <img src="img/qr code.png" width="150" height="150" class="d-inline-block align-text-center">
+                            </div>
+                            <div class="col-12 col-md-8 col-lg-10 mt-4 mt-md-0">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-4">
+                                                Nome:
+                                                <p id="finalName" class="fw-bold">-</p>
+                                        </div>
+                                        <div class="col-12 col-lg-4">
+                                                Cognome
+                                                <p id="finalSurname" class="fw-bold">-</p>
+                                        </div>
+                                        <div class="col-12 col-lg-4">
+                                                La distanza inserita è:
+                                                <p id="finalKm" class="fw-bold">-</p>
+                                        </div>
+                                        <div class="col-12">
+                                            Il prezzo totale del biglietto è:
+                                            <p id="price" class="fw-bold">-</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 text-end">
+                <button class="btn btn-outline-secondary" id="secondary" disabled>Pulisci</button>
             </div>
         </div>
     </div>
